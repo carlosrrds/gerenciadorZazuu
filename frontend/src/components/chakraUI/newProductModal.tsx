@@ -70,7 +70,7 @@ export default function NewProductModal({ newIsOpen, newOnClose }: INewProductMo
                             <FormLabel>Nome</FormLabel>
                             <Input
                                 type="text"
-                                {...register('name', { required: 'Campo nome obrigatorio', minLength: { value: 3, message: "O nome de ter pelo meno 3 caracteres" }, maxLength: { value: 255, message: "O nome deve ter no maximo 255 caracteres" } })} />
+                                {...register('name', { required: 'Campo nome obrigatorio', minLength: { value: 3, message: "O nome de ter pelo menos 3 caracteres" }, maxLength: { value: 255, message: "O nome deve ter no maximo 255 caracteres" } })} />
                             <FormErrorMessage>
                                 {errors.name && errors.name.message?.toString()}
                             </FormErrorMessage>
@@ -78,7 +78,7 @@ export default function NewProductModal({ newIsOpen, newOnClose }: INewProductMo
                         <FormControl minW={'100%'} id='description' mb={4} isInvalid={errors.description && true}>
                             <FormLabel>Descrição</FormLabel>
                             <Textarea minW={'100%'}
-                                {...register('description', { required: 'Campo descrição obrigatorio', minLength: { value: 3, message: "O nome de ter pelo meno 3 caracteres" }, maxLength: { value: 2000, message: "A descrição deve ter no maximo 2000 caracteres" } })} />
+                                {...register('description', { required: 'Campo descrição obrigatorio', minLength: { value: 3, message: "O nome de ter pelo menos 3 caracteres" }, maxLength: { value: 2000, message: "A descrição deve ter no maximo 2000 caracteres" } })} />
                             <FormErrorMessage>
                                 {errors.description && errors.description.message?.toString()}
                             </FormErrorMessage>

@@ -57,7 +57,7 @@ export default function ProductCard(props: IProps) {
                 >
                     <Box maxW={{ base: '180px', sm: "initial" }} >
                         <Text fontSize="xl" fontWeight="bold">{product.name}</Text>
-                        <Text color="green.500" mt={2} fontSize="lg">R$ {product.price}</Text>
+                        <Text color="green.500" mt={2} fontSize="lg">{Number(product.price).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Text>
                         <Text mt={2}>{product.description}</Text>
                     </Box>
                     <Flex
