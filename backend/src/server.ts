@@ -1,14 +1,19 @@
-import express from "express"
-import "express-async-errors"
-import { routes } from "./routes"
-import errorHandler from "./middlewares/errorHandle.middleware"
+import express from 'express';
+import 'express-async-errors';
+import { routes } from './routes';
+import errorHandler from './middlewares/errorHandle.middleware';
 
-const app = express()
+const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
-app.use(routes)
+app.use(routes);
 
-app.use(errorHandler)
+app.use(errorHandler);
 
-app.listen(3333, () => console.log("Server is runnning in port 3333"))
+const host = '0.0.0.0';
+const port = 3333;
+
+app.listen(port, host, () => {
+    console.log(`O servidor está rodando em http://${host}:${port}/`);
+});
