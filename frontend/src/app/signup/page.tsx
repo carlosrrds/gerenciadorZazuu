@@ -93,7 +93,7 @@ export default function SignIn() {
             <FormControl id="name" isRequired isInvalid={errors.name && true} >
               <FormLabel>Nome de usuario</FormLabel>
               <Input type="text"
-                {...register('name', { required: "Campo nome obrigatório", minLength: { value: 3, message: "O nome de ter pelo meno 3 caracteres" }, maxLength: { value: 255, message: "O nome deve ter no maximo 255 caracteres" } })} />
+                {...register('name', { required: "Campo nome obrigatório", minLength: { value: 3, message: "O nome de ter pelo menos 3 caracteres" }, maxLength: { value: 255, message: "O nome deve ter no maximo 255 caracteres" } })} />
               <FormErrorMessage>
                 {errors.name && errors.name.message?.toString()}
               </FormErrorMessage>
@@ -104,7 +104,7 @@ export default function SignIn() {
                 {...register("email", {
                   pattern: {
                     value: new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"), message: "Digite um email valido"
-                  }, required: "Campo email obrigatório", minLength: { value: 3, message: "O nome de ter pelo meno 3 caracteres" }, maxLength: { value: 255, message: "O nome deve ter no maximo 255 caracteres" }
+                  }, required: "Campo email obrigatório", minLength: { value: 3, message: "O nome de ter pelo menos 3 caracteres" }, maxLength: { value: 255, message: "O nome deve ter no maximo 255 caracteres" }
                 })} />
               <FormErrorMessage>
                 {errors.email && errors.email.message?.toString()}
@@ -114,7 +114,7 @@ export default function SignIn() {
               <FormLabel>Senha</FormLabel>
               <InputGroup>
                 <Input type={showPassword ? 'text' : 'password'}
-                  {...register('password', { required: "Campo password obrigatório", minLength: { value: 3, message: "O password de ter pelo meno 3 caracteres" }, maxLength: { value: 255, message: "O password deve ter no maximo 255 caracteres" } })} />
+                  {...register('password', { required: "Campo password obrigatório", minLength: { value: 3, message: "O password de ter pelo menos 3 caracteres" }, maxLength: { value: 255, message: "O password deve ter no maximo 255 caracteres" } })} />
                 <InputRightElement h={'full'}>
                   <Button
                     variant={'ghost'}
