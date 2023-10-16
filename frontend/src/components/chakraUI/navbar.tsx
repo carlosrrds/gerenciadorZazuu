@@ -7,14 +7,11 @@ import {
   Button,
   Stack,
   useColorModeValue,
-  useBreakpointValue,
-  useDisclosure,
 } from '@chakra-ui/react'
 
 import logo from "../../assets/images/logo.svg"
 import Image from 'next/image'
-import { useParams, usePathname, useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 
 export default function NavBar() {
   const router = useRouter()
@@ -50,7 +47,6 @@ export default function NavBar() {
           {path === "/plp" ? (
             <Button
               onClick={handleLogout}
-              display={{ base: 'none', md: 'inline-flex', }}
               color={'#4C4C4C'} as={'a'}
               fontSize={{ base: 'smaller', md: "md" }}
               fontWeight={700} variant={'link'}
